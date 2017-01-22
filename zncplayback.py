@@ -127,6 +127,7 @@ def zncplayback_connected_cb(data, signal, server):
     buf = weechat.buffer_search("irc", "server.{}".format(server))
     weechat.command(buf,
         "/msg *playback PLAY * {}".format(zncplayback_last_times[server]))
+    weechat.command(buf, "/msg *playback CLEAR *")
     return weechat.WEECHAT_RC_OK
 
 
